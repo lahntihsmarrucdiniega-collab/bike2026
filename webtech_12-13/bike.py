@@ -1,3 +1,7 @@
+from flask import Flask, render_template, request, redirect, url_for, flash
+import sqlite3
+
+
 app = Flask(__name__)
 app.secret_key = "secret_key"  # Needed for flash messages
 
@@ -122,7 +126,9 @@ def internal_error(error):
     # This function runs whenever a 500 error happens
     return render_template('index.html'), 500
 
+
+
 # ---------- MAIN ----------
 if __name__ == "__main__":
-    # Change debug=True to see errors in the browser
+    initialize_database()
     app.run(debug=True)
