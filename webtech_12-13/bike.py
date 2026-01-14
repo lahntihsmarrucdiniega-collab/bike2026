@@ -107,8 +107,24 @@ def page_not_found(e):
     # Make sure you have templates/404.html
     return render_template("register.html"), 404
 
+@app.route('/bike-data')
+def get_data():
+    try:
+        # Code that might fail
+        with open('data.json') as f:
+            return f.read()
+    except FileNotFoundError:
+        # This prevents the 500 error and gives a helpful message instead
+        return "The data file is missing, but the server is still running!", 404
+    except Exception as e:
+        # This catches anything else and logs it
+        print(f"Error occurred: {e}")
+        return "Something went wrong internally.", 500
+
 # ---------- MAIN ----------
 if __name__ == "__main__":
+    # Change debug=True to see errors in the browser
     app.run(debug=True)
+
 
 
