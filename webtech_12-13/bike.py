@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import sqlite3
 
 
-app = Flask(__name__)
+app = Flask(__app__)
 app.secret_key = "secret_key"  # Needed for flash messages
 
 DB_FILE = "bike_inventory.db"
@@ -108,6 +108,7 @@ def page_not_found(e):
     return render_template("register.html"), 404
 
 # ---------- MAIN ----------
-if __name__ == "__main__":
+if __app__ == "__main__":
     initialize_database()
+
     app.run(debug=True)
