@@ -51,6 +51,7 @@ def add_bike():
     category = request.form["category"]
     quantity = request.form["quantity"]
     price = request.form["price"]
+    addbike = request.form["addbike"]
 
     if not brand or not model or not category or not quantity or not price:
         flash("All fields are required!", "error")
@@ -100,6 +101,33 @@ def delete_bike(id):
     flash("Bike deleted successfully!", "success")
     return redirect(url_for("index"))
 
+@app.route("/add", methods=["POST"])
+def add_bike():
+    brand = request.form["brand"]
+    model = request.form["model"]
+    category = request.form["category"]
+    quantity = request.form["quantity"]
+    price = request.form["price"]
+
+    if not brand or not model or not category or not quantity or not price:
+        flash("All fields are required!", "error")
+        return redirect(url_for("index"))
+
+    try:
+        conn = create_connection()
+        cursor = conn.cursor()
+        cursor.execute(
+            "INSERT INTO bikes (brand, model, category, quantity, price) VALUES (?, ?, ?, ?, ?)",
+            (brand, model, category, int(quantity), float(price))
+        )
+        conn.commit()
+        conn.close()
+        flash("Bike added successfully!", "success")
+    except Exception as e:
+        flash(f"Error: {e}", "error")
+
+    return redirect(url_for("index"))
+
 
 # ---------- ERROR HANDLER ----------
 @app.errorhandler(404)
@@ -132,3 +160,4 @@ def internal_error(error):
 if __name__ == "__main__":
     initialize_database()
     app.run(debug=True)
+
