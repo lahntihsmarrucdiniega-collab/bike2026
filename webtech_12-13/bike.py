@@ -124,12 +124,13 @@ def get_data():
 @app.errorhandler(500)
 def internal_error(error):
     # This function runs whenever a 500 error happens
-    return render_template('500.html'), 500
+    return render_template('index.html'), 500
 
 # ---------- MAIN ----------
 if __name__ == "__main__":
     # Change debug=True to see errors in the browser
     app.run(debug=True)
+
 
 
 
