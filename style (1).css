@@ -1,0 +1,187 @@
+/* ==================== GENERAL LAYOUT ==================== */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f7;
+    margin: 0;
+    padding: 0;
+    color: #2c3e50;
+    background: url('Trinx,ninja400.jpeg.jfif') no-repeat;
+    line-height: 1.6;
+
+
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    margin-bottom: 40px; /* space below header */
+}
+
+header h1 {
+    margin: 50;
+    font-size: 28px;
+    letter-spacing: 5px;
+}
+
+main {
+    padding: 35px;
+    max-width: 1200px;
+    margin: 0 auto; /* center content */
+}
+
+/* ==================== FLASH MESSAGES ==================== */
+.messages {
+    margin-bottom: 25px;
+}
+.alert {
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.alert.success {
+    background-color: #27ae60;
+    color: white;
+}
+.alert.error {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* ==================== FORMS ==================== */
+.form-section {
+    margin-bottom: 50px;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.form-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+.bike-form input {
+    padding: 10px;
+    margin: 20px 16px 15px 2; /* right & bottom spacing */
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    width: 190px;
+    transition: border-color 0.3s;
+}
+.bike-form input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.inline-form input {
+    width: 100px;
+    padding: 8px;
+    margin: 12px 7px;
+    border: 3px solid #ccc;
+    border-radius: 8px;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, opacity 0.2s;
+    margin: 10px 10px; /* spacing between buttons */
+}
+.btn-green { background-color: #27ae60; }
+.btn-blue { background-color: #3498db; }
+.btn-red { background-color: #e74c3c; }
+
+.btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+/* ==================== TABLE ==================== */
+.table-section {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 50px;
+}
+.table-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+.table-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-section th, .table-section td {
+    border: 1px solid #ddd;
+    padding: 14px;
+    text-align: center;
+    font-size: 14px;
+}
+.table-section th {
+    background-color: #3498db;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.table-section tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.table-section tr:hover {
+    background-color: #ecf0f1;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px; /* more space above footer */
+    font-size: 14px;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .bike-form input {
+        width: 100%;
+        margin: 10px 0; /* stack inputs with spacing */
+    }
+    .inline-form input {
+        width: 70px;
+        margin: 5px 3px;
+    }
+    .btn {
+        margin-top: 10px;
+        display: inline-block;
+    }
+}
+
+    .inline-form input {
+        width: 70px;
+    }
+    .btn {
+        margin-top: 8px;
+        display: inline-block;
+    }
+}
